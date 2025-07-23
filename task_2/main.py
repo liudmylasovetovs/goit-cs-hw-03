@@ -3,7 +3,7 @@ import os
 from pymongo import MongoClient
 from colorama import init, Fore
 from bson import ObjectId
-from data import cats
+from kitties import cats
 
 # Ініціалізація colorama для кольорового виводу
 init(autoreset=True)
@@ -16,7 +16,7 @@ mongo_password = os.getenv("MONGO_PASSWORD")
 
 # Підключення до MongoDB
 client = MongoClient(
-    f"mongodb+srv://data_md:{mongo_password}@cluster777.ax8qp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster777"
+    f"mongodb+srv://milkaegik:{mongo_password}@cluster0.jzho48d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 )
 
 db = client["cats_db"]
@@ -115,20 +115,20 @@ if __name__ == "__main__":
     print(Fore.MAGENTA + "Отримання всіх котів:")
     get_all_cats()
 
-    print(Fore.BLUE + "\nОтримання кота за ім'ям 'Barsik':")
-    get_cat_by_name("Barsik")
+    print(Fore.BLUE + "\nОтримання кота за ім'ям 'Rocky':")
+    get_cat_by_name("Rocky")
 
-    print(Fore.BLUE + "\nОновлення віку кота 'Barsik' на 4 роки:")
-    update_cat_age("Barsik", 4)
+    print(Fore.BLUE + "\nОновлення віку кота 'Rocky' на 4 роки:")
+    update_cat_age("Rocky", 4)
 
-    print(Fore.BLUE + "\nДодавання характеристики до кота 'Barsik':")
-    add_feature_to_cat("Barsik", "любить лазити по деревах")
+    print(Fore.BLUE + "\nДодавання характеристики до кота 'Rocky':")
+    add_feature_to_cat("Rocky", "свариться з іншими")
 
-    print(Fore.BLUE + "\nОтримання оновлених даних кота 'Barsik':")
-    get_cat_by_name("Barsik")
+    print(Fore.BLUE + "\nОтримання оновлених даних кота 'Rocky':")
+    get_cat_by_name("Rocky")
 
-    print(Fore.BLUE + "\nВидалення кота 'Barsik':")
-    delete_cat_by_name("Barsik")
+    print(Fore.BLUE + "\nВидалення кота 'Rocky':")
+    delete_cat_by_name("Rocky")
 
     print(Fore.BLUE + "\nВидалення всіх котів:")
     delete_all_cats()
